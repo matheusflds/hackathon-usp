@@ -1,0 +1,27 @@
+<div class="overview">
+  <h1>Visão geral</h2>
+  <hr>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="projects card">
+          <h2>Projetos Ativos</h3>
+          <hr>
+          <% 5.times do %>
+            <%= render "project_preview" %>
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="col-sm-6">
+        <div class="suggestions card">
+          <h3>Sugestões</h3>  
+          <hr>
+          <% 4.times do %>
+            <%= render "suggestion_preview" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
