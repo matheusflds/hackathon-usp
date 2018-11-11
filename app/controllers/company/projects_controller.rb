@@ -1,5 +1,6 @@
 class Company::ProjectsController < Company::BaseController
   def index
+    @proposals = CompanyProposal.all
   end
 
   def show
