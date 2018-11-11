@@ -1,11 +1,14 @@
 .overview {
   padding: 20px 10px;
-
+  
   hr {
     margin-top: 0px;
     margin-bottom: 40px;
   }
-
+  
+  .card {
+    border: none;
+  }
   .projects.card, .suggestions.card {
     box-shadow: 0px 0px 5px #dadada;
     padding: 20px 10px;
