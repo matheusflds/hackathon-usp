@@ -1,22 +1,33 @@
-<div class="overview">
-  <h2>Visão geral</h2>
-  <hr>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="projects card">
-        <h3>Projetos Ativos</h3>
-        <% 5.times do %>
-          <%= render "project_preview" %>
-        <% end %>
+<div class="container">
+  <div class="overview">
+    <div class="mt-5">
+      <div class="row">
+        <div class="col-sm-12">
+          <span class="h2">Visão Geral</span>
+        </div>
       </div>
     </div>
-    
-    <div class="col-sm-6">
-      <div class="suggestions card">
-        <h3>Sugestões</h3>  
-        <% 4.times do %>
-          <%= render "suggestion_preview" %>
-        <% end %>
+    <div class="row mt-4">
+      <div class="col-sm-6">
+        <div class="projects card">
+          <span class="h4 font-weight-bold">Projetos Ativos</span>
+          <div class="mt-3">
+            <% 5.times do %>
+              <%= render "project_preview" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="suggestions card">
+          <span class="h4 font-weight-bold">Sugestões</span>
+          <div class="mt-3">
+            <% 4.times do %>
+              <%= render "suggestion_preview" %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
