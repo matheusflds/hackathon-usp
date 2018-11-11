@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :companies do 
+  namespace 'company' do 
     root to: 'overview#index'
 
     resources :overview, only: %i[index]

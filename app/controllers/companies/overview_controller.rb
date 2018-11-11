@@ -1,4 +1,4 @@
-class Companies::OverviewController < ApplicationController
+class Companies::OverviewController < Companies::BaseController
   def index
   end
 end

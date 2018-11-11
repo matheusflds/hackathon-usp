@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="max-heigth">
+  <head>
+    <title>Hackathon USP</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="max-heigth">
+    <div class="page-content-wrapper">
+      <div class="page-nav-bar">
+        <%= render partial: 'layouts/layouts/navbar' %>
+      </div>
+      <div class="page-content">
+        <div class="container-fluid">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
