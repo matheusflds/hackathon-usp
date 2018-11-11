@@ -22,12 +22,12 @@
         </tr>
       </thead>
       <tbody>
-        <% @proposals.each do |proposal| %>
+        <% @projects.each do |project| %>
           <tr>
             <th scope="row">1</th>
-            <td><%= proposal.name %></td>
-            <td><%= preview_description(proposal.description) %></td>
-            <td><%= translate_status(proposal.status) %></td>
+            <td><%= project.name %></td>
+            <td><%= preview_description(project.description) %></td>
+            <td><%= translate_status(project.status) %></td>
           </tr>
         <% end %>
       </tbody>

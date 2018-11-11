@@ -1,6 +1,6 @@
 class Department::ProjectsController < Department::BaseController
   def index
-    @proposals = DepartmentProposal.all
+    @projects = current_department.projects
   end
 
   def show

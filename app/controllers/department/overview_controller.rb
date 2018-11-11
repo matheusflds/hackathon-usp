@@ -5,7 +5,7 @@ class Department::OverviewController < Department::BaseController
         .where("tags.value = '#{tag.value}'")
         .where.not(status: 'accepted')
         .first
-    end
+    end.compact
     @company_proposals = @company_proposals.uniq.compact
     @company_proposals = @company_proposals[0..4]
     @projects = current_department.projects

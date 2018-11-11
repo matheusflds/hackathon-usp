@@ -10,7 +10,7 @@
     <div class="row mt-4">
       <div class="col-sm-6">
         <div class="projects card">
-          <span class="h4 font-weight-bold">Projetos Ativos</span>
+          <span class="h4 font-weight-bold">Projetos ativos</span>
           <div class="mt-3">
             <% @projects.each do |project| %>
               <%= render partial: "project_preview", locals: { project: project } %>
@@ -21,7 +21,7 @@
 
       <div class="col-sm-6">
         <div class="proposals card">
-          <span class="h4 font-weight-bold">Propostas</span>
+          <span class="h4 font-weight-bold">Sugestões de propostas</span>
           <div class="mt-3">
             <% @company_proposals.each do |company_proposal| %>
               <%= render "proposal_preview", company_proposal: company_proposal %>
