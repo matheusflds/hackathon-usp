@@ -1,11 +1,9 @@
 <div class="card proposal-preview">
-  <h4>Projeto X</h4>
+  <h4><%= company_proposal.name %></h4>
   <div class="proposal-progress">
-    <span>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, id.
-    </span> 
+    <span><%= company_proposal.description %></span> 
   </div>
   <div class="button-container">
-    <%= link_to  "Ver mais", '#', class: 'btn btn-link float-right' %>
+    <%= link_to  "Ver mais", department_proposal_path(company_proposal), class: 'btn btn-link float-right' %>
   </div>
 </div>
