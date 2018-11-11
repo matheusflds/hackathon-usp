@@ -1,0 +1,23 @@
+<div class="application-logo">
+  <%= image_tag "logo.svg", class: "application-logo" %>
+</div>
+
+<div class="menu-entry-item">
+  <%= link_to department_overview_index_path do %>
+    <%= fa_icon "globe" %>
+    <span>Overview</span>
+  <% end %>
+</div>
+
+<div class="menu-entry-item">
+  <%= link_to department_projects_path do %>
+    <%= fa_icon "tasks" %>
+    <span>Projetos</span>
+  <% end %>
+</div>
+
+
+<div class="logout-button">
+  <%= fa_icon "sign-out" %>
+  <span>Sair</span>
+</div>
