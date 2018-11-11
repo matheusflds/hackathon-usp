@@ -3,8 +3,5 @@ class Company::BaseController < ApplicationController
 
   def current_company
     Company.first || Company.create(name: 'RedBull', email: 'red@bull.com', phone: '190')
-
-  def company
-    Company.first
   end
 end
