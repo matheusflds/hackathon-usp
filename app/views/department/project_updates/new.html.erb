@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="mt-5">
+    <div class="row">
+      <div class="col-sm-6">
+        <span class="h2">Nova Atualização</span>
+      </div>
+    </div>
+  </div>
+  <div class="context-box-wrapper mt-4">
+    <%= simple_form_for @project_update, url: department_project_project_updates_path do |f| %>
+      <%= f.input :title, label: 'Título' %>
+      <%= f.input :value, as: :decimal, label: 'Valor' %>
+      <%= f.input :subject, collection: @subjects, label: 'Tipo' %>
+      <%= f.input :description, label: 'Descrição' %>
+      <%= f.button :submit, 'Criar' %>
+    <% end %>
+  </div>
+</div>

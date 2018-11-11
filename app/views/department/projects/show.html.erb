@@ -1,6 +1,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 <div class="">
+  <div class="mt-3">
+    <div class="row">
+      <div class="col-sm-12 ml-3">
+        <%= link_to "Nova Atualização", new_department_project_project_update_path(project_id: params[:id]), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
   <div class="project col-sm-12">
     <div class="row">
       <div class="col-sm-8">
@@ -58,9 +65,15 @@
 
           <div class="card-content">
             <div class="row">
-              <div class="offset-lg-2 col-lg-8">
-                <canvas id="myChart"></canvas>
-              </div>
+              <% if @updates.keys.length > 0 %>
+                <div class="offset-lg-2 col-lg-8">
+                  <canvas id="myChart"></canvas>
+                </div>
+              <% else %>
+                <div class="col-lg-12">
+                  <span class="h6 font-weight-bold">Ainda não foram utilizados os recursos.</span>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
@@ -73,11 +86,17 @@
           </div>
 
           <div class="card-content">
-            <% @project.project_updates.each do |update| %>
-              <div class="updates-card-wrapper">
-                <span class="h5 font-weight-bold"><%= update.title %></span>
-                <p class="mt-2"><%= update.description %></p>
-                <p><strong>Valor utilizado: </strong><%= number_to_currency(update.value, unit: "R$", separator: ",") %></p>
+            <% if @project.project_updates.length > 0 %>
+              <% @project.project_updates.each do |update| %>
+                <div class="updates-card-wrapper">
+                  <span class="h5 font-weight-bold"><%= update.title %></span>
+                  <p class="mt-2"><%= update.description %></p>
+                  <p><strong>Valor utilizado: </strong><%= number_to_currency(update.value, unit: "R$", separator: ",") %></p>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="col-lg-12">
+                <span class="h6 font-weight-bold">Nenhuma atualização encontrada.</span>
               </div>
             <% end %>
           </div>
@@ -88,24 +107,26 @@
 </div>
 
 <%= javascript_tag do %>
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var chart = new Chart(ctx, {
-      // The type of chart we want to create
-      type: 'pie',
+  $(document).ready(() => {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'pie',
 
-      // The data for our dataset
-      data: {
-          labels: [<% @updates.each do |name, value| %>"<%= name %>",<% end %>],
-          datasets: [{
-              label: "Uso dos recursos",
-              backgroundColor: [<% @updates.keys.count.times do %>"<%= "rgb(#{@rand.rand(0..255)}, #{@rand.rand(0..255)}, #{@rand.rand(0..255)})" %>",<% end %>],
-              data: [<% @updates.each do |name, value| %>"<%= value %>",<% end %>],
-          }]
-      },
+        // The data for our dataset
+        data: {
+            labels: [<% @updates.each do |name, value| %>"<%= name %>",<% end %>],
+            datasets: [{
+                label: "Uso dos recursos",
+                backgroundColor: [<% @updates.keys.count.times do %>"<%= "rgb(#{@rand.rand(0..255)}, #{@rand.rand(0..255)}, #{@rand.rand(0..255)})" %>",<% end %>],
+                data: [<% @updates.each do |name, value| %>"<%= value %>",<% end %>],
+            }]
+        },
 
-      // Configuration options go here
-      options: {
-        responsive: true
-      }
+        // Configuration options go here
+        options: {
+          responsive: true
+        }
+    });
   });
 <% end %>
