@@ -14,4 +14,67 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
+@import "font-awesome";
+
+.max-heigth {
+  height: 100%;
+}
+
+.page-content-wrapper {
+  height: 100%;
+  display: flex;
+  overflow-y: hidden;
+  flex: 1;
+};
+
+.page-nav-bar {
+  display: block;
+  flex: 0 0 80px;
+  border-left-color: #e6e6e6;
+  background-color: #e6e6e6;
+  padding-top: 8px;
+  padding-bottom: 8px;
+};
+
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.application-logo {
+  height: 60px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.menu-entry-item {
+  width: 80px;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 2.5em;
+  color: #2d2d2d;
+  cursor: pointer;
+  transition: all 0.1s linear;
+
+  &:hover {
+    color: #87CEFA;
+  }
+}
+
+.logout-button {
+  width: 80px;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 2.5em;
+  color: #a3a3a3;
+  cursor: pointer;
+  bottom: 0;
+  position: absolute;
+  transition: all 0.1s linear;
+
+  &:hover {
+    color: #87CEFA;
+  }
+}

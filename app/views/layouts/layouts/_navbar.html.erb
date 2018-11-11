@@ -1,0 +1,10 @@
+<div class="application-logo">
+  <%= image_tag "logo.svg", class: "application-logo" %>
+</div>
+
+<%= render partial: 'layouts/layouts/menu_entry', locals: { icon_name: "globe" } %>
+<%= render partial: 'layouts/layouts/menu_entry', locals: { icon_name: "tasks" } %>
+
+<div class="logout-button">
+  <%= fa_icon "sign-out" %>
+</div>
