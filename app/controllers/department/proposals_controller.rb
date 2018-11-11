@@ -6,6 +6,7 @@ class Department::ProposalsController < Department::BaseController
   def show_interest
     company_proposal = CompanyProposal.find(params[:proposal_id])
     company_proposal.status = 'accepted'
+    company_proposal.department = current_department
     company_proposal.save!
 
     redirect_to department_root_path
