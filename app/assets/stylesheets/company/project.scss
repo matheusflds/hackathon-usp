@@ -1,14 +1,35 @@
 .project {
   padding: 20px 0px;
 
-  .description, .investments, .additional-info {
-    margin-bottom: 10px;
-    padding: 10px 0px;
+  span {
+    color: #5c5c5c;
   }
 
-  .progress-info {
-    .progress {
-      margin-top: 20px;
+  .description, .investment-container {
+    margin-bottom: 20px;
+  }
+
+  .card {
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 5px #dadada;
+    border: none;
+
+    .card-header {
+      border-bottom: 1px solid #f0f0f0;
     }
+
+    .card-content {
+      padding: 20px;
+    }
+  }
+
+  .investment {
+    h5 {
+      font-weight: bold
+    }
+  }
+
+  .progress {
+    margin-top: 20px;
   }
 }
