@@ -1,6 +1,6 @@
 class Department::ProposalsController < Department::BaseController
   def show
-    @company_proposal = CompanyProposal.find(params[:id])
+    @department_proposal = DepartmentProposal.find(params[:id])
   end
 
   def new
@@ -20,9 +20,10 @@ class Department::ProposalsController < Department::BaseController
     @department_proposal = DepartmentProposal.new(post_params)
     @department_proposal.tags = tags
     @department_proposal.department = current_department
+    @department_proposal.status = 'pending'
 
     if @department_proposal.save
-      redirect_to @department_proposal, notice: 'Proposta criada com sucesso.'
+      redirect_to department_proposal_path(@department_proposal), notice: 'Proposta criada com sucesso.'
     else
       render :new
     end

@@ -23,10 +23,9 @@
         <div class="suggestions card">
           <span class="h4 font-weight-bold">Sugestões de propostas</span>
           <div class="mt-3">
-            <% 4.times do %>
-              <%= render "suggestion_preview" %>
+            <% @department_proposals.each do |department_proposal| %>
+              <%= render "suggestion_preview", department_proposal: department_proposal %>
             <% end %>
-          </div>
         </div>
       </div>
     </div>

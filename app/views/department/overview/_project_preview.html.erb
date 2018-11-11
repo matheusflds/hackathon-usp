@@ -1,11 +1,11 @@
 <div class="card project-preview">
-  <h4>Projeto X</h4>
+  <h4><%= project.name %></h4>
   <div class="project-progress">
     <span>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, id.
-    </span> 
+      <%= project.description %>
+    </span>
   </div>
   <div class="button-container">
-    <%= link_to  "Ver mais", '#', class: 'btn btn-link float-right' %>
+    <%= link_to  "Ver mais", department_project_path(project.id), class: 'btn btn-link float-right' %>
   </div>
 </div>
