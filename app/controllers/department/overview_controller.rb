@@ -4,5 +4,6 @@ class Department::OverviewController < Department::BaseController
       CompanyProposal.joins(:tags).where("tags.value = '#{tag.value}'").first 
     end
     @company_proposals = @company_proposals.uniq
+    @company_proposals = @company_proposals[0..4]
   end
 end
