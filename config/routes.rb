@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
     resources :overview, only: %i[index]
     resources :projects
-    resources :proposals, only: %i[show new create] do 
+    resources :proposals, only: %i[show new create] do
       post '/show_interest', to: 'proposals#show_interest'
     end
   end

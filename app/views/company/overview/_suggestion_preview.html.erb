@@ -1,6 +1,9 @@
-<div class="card sugestion-preview">
-  <h4>Sugestão Y</h4>
-  <div class="sugestion-description">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, id.
+<div class="card proposal-preview">
+  <h4><%= department_proposal.name %></h4>
+  <div class="proposal-progress">
+    <span><%= department_proposal.description %></span>
+  </div>
+  <div class="button-container">
+    <%= link_to  "Ver mais", company_proposal_path(department_proposal), class: 'btn btn-link float-right' %>
   </div>
 </div>

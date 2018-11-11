@@ -4,9 +4,10 @@ class Department::OverviewController < Department::BaseController
       CompanyProposal.joins(:tags)
         .where("tags.value = '#{tag.value}'")
         .where.not(status: 'accepted')
-        .first 
+        .first
     end
     @company_proposals = @company_proposals.uniq.compact
     @company_proposals = @company_proposals[0..4]
+    @projects = current_department.projects
   end
 end
