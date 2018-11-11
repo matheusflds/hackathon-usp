@@ -5,4 +5,11 @@ Rails.application.routes.draw do
     resources :overview, only: %i[index]
     resources :projects
   end 
+
+  namespace 'department' do
+    root to: 'overview#index'
+
+    resources :overview, only: %i[index]
+    resources :projects
+  end
 end
