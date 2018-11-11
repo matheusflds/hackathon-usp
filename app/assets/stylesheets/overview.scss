@@ -1,5 +1,21 @@
 .overview {
-  .card {
-    
+  h1 {
+    font-weight: bold;
+  }
+  
+  .projects.card, .suggestions.card {
+    box-shadow: 0px 0px 5px #dadada;
+    padding: 20px 10px;
+    background-color: #f5f5f5;
+
+    hr {
+      margin-top: 0;
+      margin-bottom: 30px
+    }
+
+    .card {
+      padding: 10px;
+      margin-bottom: 15px;
+    }
   }  
 }
