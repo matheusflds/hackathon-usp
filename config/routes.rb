@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  namespace 'company' do
-    resources :overview, only: [:index]
-  end
+  namespace 'company' do 
+    root to: 'overview#index'
+
+    resources :overview, only: %i[index]
+    resources :projects
+  end 
 end
