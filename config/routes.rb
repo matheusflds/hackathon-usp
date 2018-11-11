@@ -12,6 +12,6 @@ Rails.application.routes.draw do
 
     resources :overview, only: %i[index]
     resources :projects
-    resources :proposals, only: %i[show]
+    resources :proposals, only: %i[show new create]
   end
 end

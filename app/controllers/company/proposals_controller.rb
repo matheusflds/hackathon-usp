@@ -3,6 +3,10 @@ class Company::ProposalsController < Company::BaseController
     @company_proposal = CompanyProposal.new
   end
 
+  def show
+    @department_proposal = DepartmentProposal.find(params[:id])
+  end
+
   def create
     tags_array = input_to_array(params[:company_proposal][:tags])
 

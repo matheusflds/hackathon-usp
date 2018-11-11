@@ -5,7 +5,9 @@
         <span class="h2">Projetos</span>
       </div>
       <div class="col-sm-6">
-        <button type="button" class="btn btn-primary pull-right">Criar</button>
+        <%= link_to new_department_proposal_path do %>
+          <button type="button" class="btn btn-primary pull-right">Nova Proposta</button>
+        <% end %>
       </div>
     </div>
   </div>
