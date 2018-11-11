@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="overview">
+    <div class="mt-5">
+      <div class="row">
+        <div class="col-sm-12">
+          <span class="h2">Propostas</span>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-sm-12">
+        <div class="projects card">
+          <span class="h4 font-weight-bold">Ativas</span>
+          <div class="mt-3">
+            <% @proposals.each do |proposal| %>
+              <% if proposal.status == 'accepted' %>
+                <%= render partial: "proposal_preview", locals: { proposal: proposal } %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

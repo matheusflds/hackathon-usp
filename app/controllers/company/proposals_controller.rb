@@ -1,4 +1,8 @@
 class Company::ProposalsController < Company::BaseController
+  def index
+    @proposals = current_company.company_proposals
+  end
+  
   def new
     @company_proposal = CompanyProposal.new
   end
