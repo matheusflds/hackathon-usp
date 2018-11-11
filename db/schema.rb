@@ -78,6 +78,28 @@ ActiveRecord::Schema.define(version: 2018_11_11_085514) do
     t.index ["tag_id", "department_id"], name: "index_departments_tags_on_tag_id_and_department_id"
   end
 
+  create_table "project_updates", force: :cascade do |t|
+    t.string "title"
+    t.decimal "value"
+    t.string "subject"
+    t.string "description"
+    t.integer "project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.decimal "investments"
+    t.string "integrants"
+    t.string "link"
+    t.string "status"
+    t.string "notes"
+    t.integer "progress"
+    t.decimal "invested"
+    t.integer "company_id"
+    t.integer "department_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "value"
   end
