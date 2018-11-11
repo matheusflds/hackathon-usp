@@ -21,12 +21,13 @@ class Company::ProposalsController < Company::BaseController
     @company_proposal.tags = tags
     @company_proposal.company = current_company
     @company_proposal.status = 'pending'
-    
+
     if @company_proposal.save
       redirect_to @company_proposal, notice: 'Proposta criada com sucesso.'
     else
       render :new
     end
+    byebug
   end
 
   private

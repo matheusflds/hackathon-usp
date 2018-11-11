@@ -11,7 +11,7 @@ class Department::ProposalsController < Department::BaseController
 
     redirect_to department_root_path
   end
-  
+
   def new
     @department_proposal = DepartmentProposal.new
   end
@@ -32,7 +32,7 @@ class Department::ProposalsController < Department::BaseController
     @department_proposal.status = 'pending'
 
     if @department_proposal.save
-      redirect_to department_proposal_path(@department_proposal), notice: 'Proposta criada com sucesso.'
+      redirect_to department_root_path, notice: 'Proposta criada com sucesso.'
     else
       render :new
     end
