@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="mt-5">
+    <div class="row">
+      <div class="col-sm-6">
+        <span class="h2">Projetos</span>
+      </div>
+    </div>
+  </div>
+  <div class="context-box-wrapper mt-4">
+    <%= simple_form_for @department_proposal do |f| %>
+      <%= f.input :name, label: 'Nome' %>
+      <%= f.input :description, label: 'Descrição', as: :text %>
+      <%= f.input :investments, label: 'Investimentos', as: :decimal %>
+      <%= f.input :integrants, label: 'Insira os membros separados por ;' %>
+      <%= f.input :link, label: 'Currículo Lattes' %>
+      <%= f.input :notes, label: 'Informações adicionais', as: :text %>
+      <%= f.input :tags, label: 'Insira as tags separadas por ;' %>
+      <%= f.button :submit, 'Criar'%>
+    <% end %>
+  </div>
+</div>
