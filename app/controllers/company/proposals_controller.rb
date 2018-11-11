@@ -20,7 +20,8 @@ class Company::ProposalsController < Company::BaseController
     @company_proposal = CompanyProposal.new(post_params)
     @company_proposal.tags = tags
     @company_proposal.company = current_company
-
+    @company_proposal.status = 'pending'
+    
     if @company_proposal.save
       redirect_to @company_proposal, notice: 'Proposta criada com sucesso.'
     else

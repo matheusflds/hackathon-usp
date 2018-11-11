@@ -5,6 +5,6 @@ class Company::OverviewController < Company::BaseController
     end
     @department_proposals = @department_proposals.uniq
     @department_proposals = @department_proposals[0..4]
-    @projects = company.projects
+    @projects = current_company.projects
   end
 end
