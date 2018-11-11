@@ -8,7 +8,7 @@ class Company::ProposalsController < Company::BaseController
   end
 
   def show
-    @department_proposal = DepartmentProposal.find(params[:id])
+    @company_proposal = CompanyProposal.find(params[:id])
   end
 
   def create
