@@ -4,5 +4,7 @@ class Company::ProjectsController < Company::BaseController
 
   def show
     @rand = Random.new
+    @project = Project.find(params[:id])
+    @updates = @project.project_updates.group(:subject).sum(:value)
   end
 end
