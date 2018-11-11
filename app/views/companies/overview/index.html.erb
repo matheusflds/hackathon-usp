@@ -1,11 +1,10 @@
 <div class="container-fluid overview">
-  <h1>Visão geral</h2>
+  <h2>Visão geral</h2>
   <hr>
   <div class="row col-lg-8 offset-lg-2">
     <div class="col-sm-6">
       <div class="projects card">
-        <h2>Projetos Ativos</h3>
-        <hr>
+        <h3>Projetos Ativos</h3>
         <% 5.times do %>
           <%= render "project_preview" %>
         <% end %>
@@ -15,7 +14,6 @@
     <div class="col-sm-6">
       <div class="suggestions card">
         <h3>Sugestões</h3>  
-        <hr>
         <% 4.times do %>
           <%= render "suggestion_preview" %>
         <% end %>
