@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_11_081149) do
+ActiveRecord::Schema.define(version: 2018_11_11_082435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,14 @@ ActiveRecord::Schema.define(version: 2018_11_11_081149) do
     t.bigint "tag_id", null: false
     t.index ["department_id", "tag_id"], name: "index_departments_tags_on_department_id_and_tag_id"
     t.index ["tag_id", "department_id"], name: "index_departments_tags_on_tag_id_and_department_id"
+  end
+
+  create_table "project_updates", force: :cascade do |t|
+    t.string "title"
+    t.decimal "value"
+    t.string "subject"
+    t.string "description"
+    t.integer "project_id"
   end
 
   create_table "projects", force: :cascade do |t|
