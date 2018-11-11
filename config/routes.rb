@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'company/overview#index'
+
   namespace 'company' do
     root to: 'overview#index'
 
