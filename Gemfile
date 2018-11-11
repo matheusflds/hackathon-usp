@@ -32,6 +32,7 @@ gem "font-awesome-rails"
 
 gem 'simple_form'
 
+gem 'ransack'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

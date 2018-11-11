@@ -23,8 +23,8 @@
         <div class="proposals card">
           <span class="h4 font-weight-bold">Propostas</span>
           <div class="mt-3">
-            <% 4.times do %>
-              <%= render "proposal_preview" %>
+            <% @company_proposals.each do |company_proposal| %>
+              <%= render "proposal_preview", company_proposal: company_proposal %>
             <% end %>
           </div>
         </div>
