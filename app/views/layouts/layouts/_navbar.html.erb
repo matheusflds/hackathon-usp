@@ -2,8 +2,18 @@
   <%= image_tag "logo.svg", class: "application-logo" %>
 </div>
 
-<%= render partial: 'layouts/layouts/menu_entry', locals: { icon_name: "globe" } %>
-<%= render partial: 'layouts/layouts/menu_entry', locals: { icon_name: "tasks" } %>
+<div class="menu-entry-item">
+  <%= link_to company_overview_index_path do %>
+    <%= fa_icon "globe" %>
+  <% end %>
+</div>
+
+<div class="menu-entry-item">
+  <%= link_to company_overview_index_path do %>
+    <%= fa_icon "tasks" %>
+  <% end %>
+</div>
+
 
 <div class="logout-button">
   <%= fa_icon "sign-out" %>

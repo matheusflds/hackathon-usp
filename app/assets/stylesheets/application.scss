@@ -54,12 +54,16 @@
   text-align: center;
   margin: 10px 0;
   font-size: 2.5em;
-  color: #2d2d2d;
   cursor: pointer;
-  transition: all 0.1s linear;
+  text-decoration: none;
 
-  &:hover {
-    color: #87CEFA;
+  & > a {
+    color: #2d2d2d;
+    transition: all 0.1s linear;
+
+    &:hover {
+      color: #87CEFA;
+    }
   }
 }
 
