@@ -27,7 +27,6 @@ class Company::ProposalsController < Company::BaseController
     else
       render :new
     end
-    byebug
   end
 
   private
