@@ -3,5 +3,6 @@ class Company::ProjectsController < Company::BaseController
   end
 
   def show
+    @rand = Random.new
   end
 end

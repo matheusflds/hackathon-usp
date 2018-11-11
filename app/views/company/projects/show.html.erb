@@ -1,44 +1,109 @@
-<div class="project col-lg-9">
-  <div class="card">
-    <div class="card-header">
-      <h3>Projeto X</h3>
-    </div>
-    
-    <div class="card-content">
-      <div class="description">
-        <h4>Descrição</h4>
-        <span>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non adipisci quasi atque facere ut, quibusdam labore maxime! Eligendi eius, quisquam aliquam nostrum temporibus, esse consequuntur reprehenderit et culpa accusamus perferendis.
-        </span>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<div class="">
+  <div class="project col-sm-12">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="card">
+          <div class="card-header">
+            <span class="h5 font-weight-bold">Projeto X</span>
+          </div>
+
+          <div class="card-content">
+            <div class="description">
+              <h4>Descrição</h4>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non adipisci quasi atque facere ut, quibusdam labore maxime! Eligendi eius, quisquam aliquam nostrum temporibus, esse consequuntur reprehenderit et culpa accusamus perferendis.
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="investment-container">
-        <h4>Investimento</h4>
-        <div class="investment">
-          <h5>R$32,00</h5>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-header">
+            <span class="h5 font-weight-bold">Dados Básicos</span>
+          </div>
+
+          <div class="card-content">
+            <div class="description">
+              <p><strong>Professor:</strong> Bla</p>
+              <p><strong>Faculdade:</strong> IME</p>
+              <p><strong>Investimento:</strong> R$32,00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="h5 font-weight-bold">Progresso</span>
+      </div>
+      <div class="card-content">
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima debitis quae ab consequatur iusto tempore. Dolores quasi accusantium magnam </span>
+        <div class="progress">
+          <div class="progress-bar-striped bg-info" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header">
+            <span class="h5 font-weight-bold">Uso dos recursos</span>
+          </div>
+
+          <div class="card-content">
+            <div class="row">
+              <div class="offset-lg-2 col-lg-8">
+                <canvas id="myChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header">
+            <span class="h5 font-weight-bold">Atualizações</span>
+          </div>
+
+          <div class="card-content">
+            <div class="description">
+              <p><strong>Professor:</strong> Bla</p>
+              <p><strong>Faculdade:</strong> IME</p>
+              <p><strong>Investimento:</strong> R$32,00</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="card">
-    <div class="card-header">
-      <h4>Progresso</h4>
-    </div>
-    <div class="card-content">
-      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima debitis quae ab consequatur iusto tempore. Dolores quasi accusantium magnam </span>
-      <div class="progress">
-        <div class="progress-bar-striped bg-info" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <h4>Observações</h4>
-    </div>
-    <div class="card-content">
-      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos velit consectetur sed repudiandae voluptates animi.</span>
-    </div>
-  </div>
 </div>
+
+<%= javascript_tag do %>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: 'pie',
+
+      // The data for our dataset
+      data: {
+          labels: ["January", "February", "March", "April", "May", "June", "July"],
+          datasets: [{
+              label: "My First dataset",
+              backgroundColor: [<% 7.times do %>"<%= "rgb(#{@rand.rand(0..255)}, #{@rand.rand(0..255)}, #{@rand.rand(0..255)})" %>",<% end %>],
+              data: [0, 10, 5, 2, 20, 30, 45],
+          }]
+      },
+
+      // Configuration options go here
+      options: {
+        responsive: true
+      }
+  });
+<% end %>
